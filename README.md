@@ -1,12 +1,18 @@
-📱 Student Social Hub (Full-Stack)A modern, lightweight social media platform built with FastAPI and React JS. This project allows students to register accounts, maintain a profile, and share image-based posts in a community feed.🎯 Project OverviewThis application demonstrates a complete CRUD (Create, Read, Update, Delete) lifecycle with a focus on:Persistent Storage: Moving from simple lists to a permanent SQL Database.Media Management: Handling image uploads and static file serving.Session Logic: Restricting content management so only owners can edit/delete their own posts.🛠️ Technology StackLayerTechnologyDescriptionFrontendUI with Hooks and Functional ComponentsBackendHigh-performance Python API frameworkDatabaseLocal SQL storage via SQLAlchemy ORMStylingCustom modern CSS (no frameworks)📂 Repository StructurePlaintext├── backend/                # FastAPI Server
-│   ├── main.py             # API Routes & SQL Logic
-│   ├── social_app.db       # SQL Database File
-│   └── static/             # Uploaded user images
-└── frontend/               # React Application
-    ├── src/
-    │   ├── App.js          # Logic & Page Routing
-    │   └── App.css         # UI Styling
-    └── package.json        # Dependencies
-⚙️ Setup & Installation1. Backend ConfigurationBashcd backend
-pip install fastapi uvicorn sqlalchemy python-multipart
-python main.py
+## 📡 API Endpoints
+
+| Endpoint | Method | Description | Access |
+| :--- | :--- | :--- | :--- |
+| `/register` | `POST` | Create a new student account | Public |
+| `/login` | `POST` | Authenticate & start session | Public |
+| `/posts` | `GET` | Retrieve all community posts | Public |
+| `/upload` | `POST` | Create post with Image/Text | Private (Owner) |
+| `/delete/{id}`| `DELETE` | Remove a specific post | Private (Owner) |
+
+---
+
+## 🤝 Contributing
+This is a student project created for learning purposes. Feel free to fork this repository and add new features like "Like" buttons or "Comments"!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
